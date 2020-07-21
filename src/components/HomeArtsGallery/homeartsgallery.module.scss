@@ -1,0 +1,58 @@
+@import '../../styles/global.scss';
+
+.gallery-arts-fluid{
+    margin-top:10vh;
+    .container{
+       @extend %container;
+       @media(max-width:$break-point-s) {
+        padding:0 20px;
+    }
+
+       .title{
+       
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+
+           .header-container{
+                width:45%;
+                margin-top:40px;
+                
+                .border-top{
+                    width:calc(100% - 70%);
+                    height:3px;
+                    background-color: $red;
+                    @media(max-width:$break-point-xs) {
+                        width:calc(100% - 50%);
+                      }
+                }
+
+                h1{
+                    font-family: $font-secondary;
+                    color:$white;
+                    margin-top:5px;
+                    font-weight: 800
+                }
+            }
+
+            p a{
+                font-family: $font-secondary;
+                color:$red;
+                font-size:20px;
+                font-weight:500;
+                text-decoration: none;
+
+                span{
+                    @media(max-width:$break-point-s) {
+                      display: none;
+                    }
+                  }
+            }
+       }
+
+       .image-gallery-container{
+           height:100%;
+           width:100%;
+       }
+    }
+}

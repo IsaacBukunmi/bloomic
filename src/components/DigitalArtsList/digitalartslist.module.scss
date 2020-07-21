@@ -1,0 +1,17 @@
+@import '../../styles/global.scss';
+
+.art-list-container-fluid{
+    margin-top:15vh;
+    @media(max-width:645px){
+        margin-top:5vh;
+    }
+    .list-heading-container{
+        @extend %container;
+    }
+  
+    .list-container{
+        @extend %container;
+
+       
+    }
+}

@@ -1,0 +1,96 @@
+@import '../../styles/global.scss';
+
+.list-heading{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:5vh;
+
+    @media(max-width:645px){
+        flex-direction: column;
+    }
+    .breadcrumb{
+        padding-left:5px;
+        @media(max-width:645px){
+            align-self: flex-start;
+            margin-bottom:7vh;
+        }
+        p {
+
+            font-size: 18px;
+            span{
+                color:$lavender;
+                font-family: $font-secondary;
+            }
+            
+            a{
+                color:$red;
+                font-family: $font-secondary;
+                text-decoration: none;
+
+                .left-Arrow{
+                    margin-right: 10px;
+                }
+            }
+
+        }
+       
+    }
+
+    .search-form-container{
+        position: relative;
+        padding-right:5px;
+        @media(max-width:645px){
+            padding-right: 0px;
+        }
+        form{
+            input{
+                background: transparent;
+                padding-left:30px;
+                border-right: none;
+                border-left:none;
+                border-top:none;
+                border-bottom: 2px solid $red;
+                color:$lavender;
+                font-family:$font-primary;
+                width:20vw;
+                font-size: 18px;
+                padding-bottom:7px;
+                @media(max-width:$break-point-md){
+                    width:30vw;
+                }
+
+                @media(max-width:$break-point-xl){
+                    width:30vw;
+                }
+                
+                @media(max-width:645px){
+                    width:70vw;
+                    margin-bottom:5px;
+                }
+
+               
+
+                &::placeholder{
+                    color:$lavender;
+                    font-family:$font-primary;
+                    font-size: 18px;
+                }
+
+                &:focus{
+                    color:$lavender;
+                    font-family:$font-primary;
+                    font-size: 18px;
+                    outline:$black;
+                }
+            }
+        }
+
+        .search-icon{
+            position: absolute;
+            color:$red;
+            top:0px;
+            font-size: 18px;
+        }
+    }
+}

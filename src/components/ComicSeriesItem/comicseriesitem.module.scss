@@ -1,0 +1,43 @@
+@import '../../styles/global.scss';
+
+.list-item-container{
+    flex: 1 0 22%;
+    margin:5px;
+    cursor: pointer;
+    margin-bottom:30px;
+
+    
+    
+    .list-item-content{
+        border:3px solid $red;
+        border-radius:10px;
+        width:275px;
+        margin: 0 auto;
+        transition: all 1s ease-in-out;
+        @media(max-width:320px){
+            width:250px;
+        }
+        &:hover{
+            transform: scale(1.05);      
+        }
+        
+        .seriesImage{
+            height:300px;
+    
+            img{
+                height: 100%;
+                width: 100%;
+                object-fit: 'cover';
+                border-top-left-radius: 6px;
+                border-top-right-radius: 6px;
+            }
+        }
+    
+        .series-title{
+            text-align: center;
+            color:$white;
+            font-family: $font-primary;
+            padding:20px 10px;
+        }
+    }
+}

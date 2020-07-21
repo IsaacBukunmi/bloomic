@@ -1,5 +1,20 @@
 import React from "react"
+import Layout from "../components/Layout";
+import HomeHero from "../components/HomeHero/HomeHero";
+import HomeSeriesSlider from "../components/HomeSeriesSlider/HomeSeriesSlider"
+import HomeStripSlide from "../components/HomeStripSlide/HomeStripSlide"
+import HomeArtsGallery from "../components/HomeArtsGallery/HomeArtsGallery";
+import NewsLetterForm from "../components/NewsletterForm/NewsletterForm";
 
-export default function Home() {
-  return <div>Hello world!</div>
+const IndexPage = () => {
+  return(
+    <Layout>
+        <HomeHero />
+        <HomeSeriesSlider />
+        <HomeStripSlide />
+        <HomeArtsGallery />
+    </Layout>
+  )
 }
+
+export default IndexPage;

@@ -1,0 +1,102 @@
+@import '../../styles/global.scss';
+
+.footer-container-fluid{
+    padding-top:40px;
+    padding-bottom:0px;
+    position: relative;
+    bottom:0;
+    left:0;
+    width:100%;
+    .footer-container{
+        @extend %container;
+        .footer-content{
+            display: flex;
+            justify-content: space-around;
+            padding-bottom:30px;
+            @media(max-width:$break-point-s) {
+                justify-content: space-between;
+              }
+
+              @media(max-width:360px) {
+                flex-direction: column;
+              }
+
+            .quick-links-container{
+                h3{
+                    font-family: $font-secondary;
+                    color:$white;
+                }
+                .quick-links{
+                    display:flex;
+                    flex-direction: column;
+                    a{
+                        color:$lavender;
+                        font-family: $font-primary;
+                        margin-bottom:20px;
+                        text-decoration: none;
+                        transition: all .35s ease-in-out;
+
+                        &:hover{
+                            color:$red;
+                        }
+                    }
+                }
+            }
+
+            .follow-container{
+                .social-media{
+                    margin-bottom: 16vh;
+                    @media(max-width:$break-point-s) {
+                        margin-bottom: 12vh;
+                      }
+                    h3{
+                        font-family: $font-secondary;
+                        color:$white;
+                    }
+
+                    .social-media-icons{
+                        .font-icon{
+                            color:$lavender;
+                            font-size: 20px;
+                            margin-right:35px;
+                            cursor: pointer;
+                            transition: all .35s ease-in-out;
+                            @media(max-width:$break-point-s) {
+                                margin-right:25px;
+                              }
+
+                            &:last-of-type{
+                                margin-right:0px;
+                            }
+
+                            &:hover{
+                                color:$red;
+                            }
+                        }
+                    }
+                }
+                .privacy-policy{
+                    p a{
+                        font-family: $font-primary;
+                        color:$lavender;
+                        text-decoration: none;
+                        transition: all .35s ease-in-out;
+
+                        &:hover{
+                            color:$red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-copyright{
+        border-top:1px solid $lavender;
+        p{
+            font-family: $font-primary;
+            color:$white;
+            text-align: center;
+        }
+    }
+}
