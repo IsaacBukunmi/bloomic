@@ -127,6 +127,10 @@ nav{
             position: absolute;
             top:50px;
             left:50px;
+            @media(max-width:$break-point-s){
+                top:30px;
+                left:30px;
+            }
         }
         .menu-items{
             display:flex;
