@@ -20,6 +20,11 @@ class Nav extends React.Component {
         }))
     }
     
+    handleLinkClick = () => {
+        this.setState({
+            navOpen:false
+        })
+    }
 
     render(){
         return(
@@ -37,30 +42,44 @@ class Nav extends React.Component {
                         <span></span>
                         <span></span>
                         <span></span>
-                    </div>
-
-                   
+                    </div>     
                 </div>
                
-                            <div className={classNames(navStyles.navMenuContainer, this.state.navOpen ? navStyles.navMenuContainer: navStyles.closeNavMenuContainer)}>
-                                <div className={navStyles.menuItems}>
-                                    <div className={navStyles.leftMenuItem}>
-                                        <div className={navStyles.menuLink}>
-                                            <Link>Home</Link>
-                                        </div>
-                                        <div className={navStyles.menuLink}>
-                                            <Link>Comic Series</Link>
-                                        </div>
-                                        <div className={navStyles.menuLink}>
-                                            <Link>Comic Strips</Link>
-                                        </div>
-                                        <div className={navStyles.menuLink}>
-                                            <Link>Digital Arts</Link>
-                                        </div>
-                                    </div>
-                                </div>   
+                <div className={classNames(navStyles.navMenuContainer, this.state.navOpen ? navStyles.navMenuContainer: navStyles.closeNavMenuContainer)}>
+                    <div className={navStyles.menuSiteName}>
+                        BLOOMIC
+                    </div>
+                    <div className={navStyles.menuItems}>
+                        <div className={navStyles.leftMenuItem}>
+                            <div className={navStyles.menuLink} activeClassName={navStyles.activeMenuLink}>
+                                <Link to="/" onClick={this.handleLinkClick}>Home</Link>
                             </div>
-                     
+                            <div className={navStyles.menuLink} >
+                                <Link to="/comic-series" onClick={this.handleLinkClick}>Comic Series</Link>
+                            </div>
+                            <div className={navStyles.menuLink}>
+                                <Link to="/comic-strips" onClick={this.handleLinkClick}>Comic Strips</Link>
+                            </div>
+                            <div className={navStyles.menuLink}>
+                                <Link to="/digital-arts" onClick={this.handleLinkClick}>Digital Arts</Link>
+                            </div>
+                        </div>
+                        <div className={navStyles.leftMenuItem}>
+                            <div className={navStyles.menuLink}>
+                                <Link to="" onClick={this.handleLinkClick}>About Us</Link>
+                            </div>
+                            <div className={navStyles.menuLink}>
+                                <Link to="" onClick={this.handleLinkClick}>Contact Us</Link>
+                            </div>
+                            <div className={navStyles.menuLink}>
+                                <Link to="" onClick={this.handleLinkClick}>Privacy Policy</Link>
+                            </div>
+                            <div className={navStyles.menuLink}>
+                                <Link to="" onClick={this.handleLinkClick}>Term of use</Link>
+                            </div>
+                        </div>
+                    </div>   
+                </div>          
             </nav>
         )
     }

@@ -2,7 +2,7 @@
 
 nav{
 
-    position: absolute;
+    position: fixed;
     z-index:1000;
     top: 0;
     width: 100%;
@@ -69,6 +69,14 @@ nav{
         }
 
         .hamburger-menu.toggle-nav{
+            // position: fixed;
+            // top:50px;
+            // right:50px;
+            
+            // @media(max-width:$break-point-s) {
+            //     top:50px;
+            //     right:30px;
+            // }
             span{
                 background-color: $black;
                 &:nth-child(1){
@@ -92,11 +100,11 @@ nav{
 
     .nav-menu-container{
         background:$red;
-        position: absolute;
+        position: fixed;
         top:0;
         right:0;
         width:100%;
-        height:100vh;
+        height:100%;
         // transition: all 1s ease-in-out;
         animation: navAnim .5s ease-in-out;
          overflow-y: hidden;
@@ -111,10 +119,67 @@ nav{
                 opacity: 1
             }
         }
+        .menu-site-name{
+            color:$black;
+            font-family: $font-logo;
+            font-weight:bold;
+            font-size:20px;
+            position: absolute;
+            top:50px;
+            left:50px;
+        }
         .menu-items{
+            display:flex;
+            justify-content: space-around;
+            align-items:center;
+            height:100vh;
+            padding:0 20%;
+            @media(max-width:$break-point-md){
+                padding:0 10%;
+            }
+
+            @media(max-width:$break-point-s){
+                flex-direction: column;
+                justify-content: center;
+                padding:5% 0%;
+            }
             .left-menu-item{
                 .menu-link{
+                    // border:2px solid $black;
+                    border-radius:20px;
+                    width:200px;
+                    // height:40px;
+                    text-align: center;
+                    vertical-align: middle;
+                    padding:20px 0;
+                    margin-bottom:30px;
+                    cursor: pointer;
+                    box-shadow:  11px 11px 22px #b41e23, 
+                                -11px -11px 22px #ff3037;
+                    transition: all .5s linear;
 
+                    @media(max-width:$break-point-s){
+                        margin-bottom:20px;
+                    }
+                    
+                    &:hover{
+                        // background-color: $black;
+                        transform: scale(1.05);
+                    }
+
+                    a{
+                        color:$black;
+                        font-size:18px;
+                        font-family:$font-secondary;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        font-weight: bold;
+                       
+                    }
+                }
+
+                .active-menu-link{
+                    transform: scale(1.05);
                 }
             }
         }

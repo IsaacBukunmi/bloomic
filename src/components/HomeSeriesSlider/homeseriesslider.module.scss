@@ -132,7 +132,7 @@
     border: none;
     outline: none;
     background-color:transparent;
-    z-index: 1000;
+    z-index: 2;
     @media(max-width:$break-point-s) {
       left: -20px; 
     }
