@@ -128,8 +128,9 @@ nav{
             top:50px;
             left:50px;
             @media(max-width:$break-point-s){
-                top:30px;
-                left:30px;
+                // top:30px;
+                // left:30px;
+                display: none;
             }
         }
         .menu-items{

@@ -1,0 +1,74 @@
+@import '../../styles/global.scss';
+
+.listings-container-fluid{
+    margin-top:10vh;
+    .container{
+        @extend %container;
+        .item-container{
+            padding:0 50px;
+            border:2px solid $red;
+            display: flex;
+            flex-direction: column;
+            color:$white; 
+            border-radius: 20px;
+            width:70%;
+            margin: 0 auto;
+            margin-bottom:30px;
+            cursor: pointer;
+            @media(max-width:$break-point-s){
+                padding:0 30px;
+                width:90%;
+            }
+
+            @media(max-width:$break-point-md){
+                width:80%;
+            }
+            .content{
+                .chapter-info{
+                    p{
+                        color:$white;
+                        font-family:$font-primary;
+                        font-size:20px;
+
+                        span{
+                            color:$red;
+                            font-family:$font-secondary;
+                            font-weight: 500;
+                        }
+
+                        br.rwd-break{
+                            display:none;
+                            @media(max-width:$break-point-s){
+                                display: block;
+                            }
+                        }
+                    }
+                }
+
+                .chapter-interaction{
+                    display: flex;
+                    justify-content: flex-end;
+                    p{
+                        font-family:$font-primary;
+                        font-size:18px;
+                        margin-right: 50px;
+                        &:last-child{
+                            margin-right: 0px;
+                        }
+
+                        .heart-icon{
+                            color:$white;
+                            padding-right:10px;
+                            cursor: pointer;
+                        }
+
+                        .eye-icon{
+                            color:$white;
+                            padding-right:10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

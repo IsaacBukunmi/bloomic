@@ -1,0 +1,69 @@
+@import '../../styles/global.scss';
+
+.list-info-container-fluid{
+    margin-top:10vh;
+    .container{
+        @extend %container;
+        .comic-card{
+            color:$white;
+            display:flex;
+            // justify-content: center;
+            @media(max-width:$break-point-md){
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .comic-image{
+                height:50%;
+                width: 50%;
+                @media(max-width:$break-point-md){
+                    height:100%;
+                    width: 100%;
+                }
+                img{
+                    width:100%;
+                    height:100%;
+                    object-fit: cover;
+                }
+            }
+            .comic-info{
+                margin-left:50px;
+                // align-self:center;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                @media(max-width:$break-point-md){
+                    margin-left:0px
+                }
+            
+                p{
+                    font-family: $font-primary;
+                    color:$white;
+                    font-size:20px;
+                    // margin-bottom:12vh;
+
+                    span{
+                        color:$red;
+                        font-family:$font-secondary;
+                        width:200px;
+                        font-weight:bold;
+                    }
+                }
+            }
+        }
+
+        .synopsis-container{
+            width:70%;
+            margin:0 auto;
+            margin-top:5vh;
+            @media(max-width:$break-point-md){
+                width:100%;
+            }
+            p{
+                color:$white;
+                font-family: $font-primary;
+                text-align:center;
+            }
+        }
+    }
+}
