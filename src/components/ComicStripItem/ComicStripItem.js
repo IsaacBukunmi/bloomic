@@ -7,13 +7,13 @@ import './comic-strip-lightbox.css';
 import styles from './comicstripitem.module.scss';
 
 
-const ComicStripItem = ({id, imageUrl, stripTitle, stripAuthor}) => {
+const ComicStripItem = ({imageUrl, stripTitle, stripAuthor}) => {
 
     const[openImage, setOpenImage] = useState(false);
 
     return(
         <Fragment>
-            <div className={styles.stripImageItem} key={id}>
+            <div className={styles.stripImageItem}>
                 <div className={styles.imageContent}>
                     <img src={imageUrl} alt="" onClick={() => setOpenImage(!openImage)}/>
                     {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 import Slider from 'react-slick';
 import './strip-slick.css';
 import "slick-carousel/slick/slick-theme.css";
@@ -8,6 +8,24 @@ import stripSlideStyles from './homestripslide.module.scss';
 
 
 const HomeStripSlide = () => {
+
+    const data = useStaticQuery(graphql`
+    query{
+        allContentfulComicStrips{
+          edges{
+            node{
+              stripTitle
+              stripAuthor
+              stripImage{
+                file{
+                  url
+                }
+              }
+            }
+          }
+        }
+      }
+    `)
 
     const settings = {
         infinite: true,
@@ -61,47 +79,15 @@ const HomeStripSlide = () => {
                 </div>
                 <div className={stripSlideStyles.sliderContainer}>
                     <Slider {...settings}>
-                        <div className={stripSlideStyles.sliderItem}>
-                            <div className={stripSlideStyles.sliderImage}>
-                                <img src="https://images.unsplash.com/photo-1593345215990-170543af6949?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt=""/>
-                            </div>
-                        </div>
-                        <div className={stripSlideStyles.sliderItem}>
-                            <div className={stripSlideStyles.sliderImage}>
-                                <img src="https://images.unsplash.com/photo-1586350716359-f8f07c13d42e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt=""/>
-                            </div>
-                        </div>
-                        <div className={stripSlideStyles.sliderItem}>
-                            <div className={stripSlideStyles.sliderImage}>
-                                <img src="https://images.unsplash.com/photo-1593345216166-6a6cbf185ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt=""/>
-                            </div>
-                        </div>
-                        <div className={stripSlideStyles.sliderItem}>
-                            <div className={stripSlideStyles.sliderImage}>
-                                <img src="https://images.unsplash.com/photo-1587043266473-a3f8ae532623?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt=""/>
-                            </div>
-                        </div>
-                        <div className={stripSlideStyles.sliderItem}>
-                            <div className={stripSlideStyles.sliderImage}>
-                                <img src="https://images.unsplash.com/photo-1587554627207-2c2e54584325?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt=""/>
-                            </div>
-                        </div>
-                        <div className={stripSlideStyles.sliderItem}>
-                            <div className={stripSlideStyles.sliderImage}>
-                                <img src="https://images.unsplash.com/photo-1593345216060-fdc5d77ba65f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt=""/>
-                               
-                            </div>
-                        </div>
-                        <div className={stripSlideStyles.sliderItem}>
-                            <div className={stripSlideStyles.sliderImage}>
-                                <img src="https://images.unsplash.com/photo-1587392739794-e205c4550660?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt=""/>
-                            </div>
-                        </div>
-                        <div className={stripSlideStyles.sliderItem}>
-                            <div className={stripSlideStyles.sliderImage}>
-                                <img src="https://images.unsplash.com/photo-1587553906014-b2b4060dd6f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt=""/>
-                            </div>
-                        </div>
+                        {
+                            data.allContentfulComicStrips.edges.slice(0, 8).map((edge) => (
+                                <div className={stripSlideStyles.sliderItem}>
+                                    <div className={stripSlideStyles.sliderImage}>
+                                        <img src={edge.node.stripImage.file.url} alt=""/>
+                                    </div>
+                                </div>
+                            ))
+                        }
                     </Slider>
                 </div>
             </div>
