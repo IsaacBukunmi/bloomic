@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 import Slider from 'react-slick';
 import "./series-slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -37,10 +37,51 @@ function SamplePrevArrow(props) {
     );
 }
 
-class HomeSeriesSlider extends React.Component {
 
-    render(){
-
+const HomeSeriesSlider = () => {
+   
+    const data = useStaticQuery(graphql`
+    query{
+        allContentfulComicSeries{
+          edges{
+            node{
+              seriesTitle
+              datePublished
+              status
+              slug
+              seriesAuthor{
+                  name
+                  role
+              }
+              heroImage{
+                file{
+                  url
+                }
+              }
+              seriesImage{
+                file{
+                  url
+                }
+                title
+              }
+              synopsis{
+                synopsis
+              }
+              chapters{
+                chapterTitle
+                chapterNumber
+                chapterImages{
+                  file{
+                    url
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `)
+    
         const settings = {
             className: "center",
             centerMode: true,
@@ -86,6 +127,8 @@ class HomeSeriesSlider extends React.Component {
               ]
         };
 
+       
+
         return(
             <div className={homeSliderStyles.seriesSliderFluid}>
                 <div className={homeSliderStyles.container}>
@@ -100,48 +143,21 @@ class HomeSeriesSlider extends React.Component {
                     </div>
                     <div className={homeSliderStyles.sliderContainer}>
                         <Slider {...settings}>
-                            <div className={homeSliderStyles.sliderItem}>
-                                <div className={homeSliderStyles.sliderImage}>
-                                    <img src="https://images.unsplash.com/photo-1491403938640-b57372002c94?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt=""/>
-                                </div>
-                                
-                            </div>
-                            <div className={homeSliderStyles.sliderItem}>
-                                <div className={homeSliderStyles.sliderImage}>
-                                    <img src="https://images.unsplash.com/photo-1587270613291-b5c7042fc104?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt=""/>
-                                </div>
-                                
-                            </div>
-                            <div className={homeSliderStyles.sliderItem}>
-                                <div className={homeSliderStyles.sliderImage}>
-                                    <img src="https://images.unsplash.com/photo-1569003339405-ea396a5a8a90?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt=""/>
-                                </div>
-                                
-                            </div>
-                            <div className={homeSliderStyles.sliderItem}>
-                                <div className={homeSliderStyles.sliderImage}>
-                                    <img src="https://images.unsplash.com/photo-1491403938640-b57372002c94?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt=""/>
-                                </div>
-                                
-                            </div>
-                            <div className={homeSliderStyles.sliderItem}>
-                                <div className={homeSliderStyles.sliderImage}>
-                                    <img src="https://images.unsplash.com/photo-1491403938640-b57372002c94?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt=""/>
-                                </div>
-                                
-                            </div>
-                            <div className={homeSliderStyles.sliderItem}>
-                                <div className={homeSliderStyles.sliderImage}>
-                                    <img src="https://images.unsplash.com/photo-1587270613304-4cc9ef012b92?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt=""/>
-                                </div>
-                               
-                            </div>
+                            {
+                                data.allContentfulComicSeries.edges.slice(0, 5).map((edge) => (
+                                    <Link to ={`/comic-series/${edge.node.slug}`} className={homeSliderStyles.sliderItem}>
+                                        <div className={homeSliderStyles.sliderImage}>
+                                            <img src={edge.node.seriesImage.file.url} alt={edge.node.seriesImage.title}/>
+                                        </div> 
+                                    </Link>
+                                ))
+                            }
                         </Slider>
                     </div>
                 </div>
             </div>
         )
-    }
+    
 }
 
 export default HomeSeriesSlider;

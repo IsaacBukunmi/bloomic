@@ -1,24 +1,28 @@
-import React from 'react'
-
+import React from 'react';
 import styles from './chapterlistinfo.module.scss';
 
-const ChapterListInfo = () => {
+
+const ChapterListInfo = (props) => {
     return(
         <div className={styles.listInfoContainerFluid}>
             <div className={styles.container}>
                 <div className={styles.comicCard}>
                     <div className={styles.comicImage}>
-                        <img src="https://image.freepik.com/free-psd/cartoon-comic-style-text-effect-psd-template_70288-50.jpg" alt=""/>
+                        <img src={props.seriesImage} alt={props.seriesImageTitle}/>
                     </div>
                     <div className={styles.comicInfo}>
-                        <p><span>Title: </span> Super Kid Strikes Back</p>
-                        <p><span>Author: </span>Michael Duro</p>
-                        <p><span>Status: </span><small className={styles.status} style={{backgroundColor:'#f27704', padding:'5px 10px', borderRadius:'10px'}}>Ongoing</small></p>
-                        <p><span>Date Published: </span>30th June, 2020</p>
+                        <p><span>Title: </span> {props.seriesTitle}</p>
+                        <p><span>Author: </span>{
+                            props.seriesAuthor.map((author) => (
+                                author.name
+                            )).join(', ')
+                        }</p>
+                        <p><span>Status: </span><small className={styles.status} style={ props.status=='Ongoing' ?{backgroundColor:'#f27704', padding:'5px 10px', borderRadius:'10px'} : ( props.status=='Finished' ? {backgroundColor:'#009b19', padding:'5px 10px', borderRadius:'10px'}: {backgroundColor:'#ff0000', padding:'5px 10px', borderRadius:'10px'} ) }>{props.status}</small></p>
+                        <p><span>Date Published: </span>{props.datePublished}</p>
                     </div>
                 </div>
                 <div className={styles.synopsisContainer}>
-                    <p>Here comes a short synopsis: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae harum omnis, excepturi molestiae nihil eaque dicta vero sapiente odit non! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid, eum.</p>
+                    <p>{props.synopsis}</p>
                 </div>
             </div>
         </div>
