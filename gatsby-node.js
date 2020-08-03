@@ -9,6 +9,9 @@ module.exports.createPages = async ({ graphql, actions }) => {
           edges{
             node{
               slug
+              chapters{
+                chapterSlug
+              }
             }
           }
         }
@@ -24,4 +27,40 @@ module.exports.createPages = async ({ graphql, actions }) => {
             }
         })
     })
+    
+
+    const chapterDetailsTemplate = path.resolve('src/templates/chapter-details.js')
+    const response = await graphql(`
+    query{
+      allContentfulSeriesChapter{
+        edges{
+          node{
+            chapterTitle
+            chapterNumber
+            chapterSlug
+            dateReleased(formatString:"MMMM Do, YYYY")
+            chapterImages{
+              file{
+                url
+              }
+            }
+            comic_series{
+              seriesTitle
+              slug
+            }
+          }
+        }
+      }
+    }
+    `)
+
+    response.data.allContentfulSeriesChapter.edges.forEach((edge) => {
+      createPage({
+          component:chapterDetailsTemplate,
+          path:`/comic-series/${edge.node.comic_series.map((item) => item.slug)}/${edge.node.chapterSlug}`,
+          context:{
+              slug:edge.node.chapterSlug
+          }
+      })
+  })
 }

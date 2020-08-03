@@ -60,7 +60,7 @@ const Series = (props) => {
                 seriesImageTitle={props.data.contentfulComicSeries.seriesImage.title} 
                 seriesAuthor={props.data.contentfulComicSeries.seriesAuthor} 
                 synopsis={props.data.contentfulComicSeries.synopsis.synopsis}/>
-            <ChapterListings chapterList={props.data.contentfulComicSeries.chapters}/>
+            <ChapterListings seriesSlug={props.data.contentfulComicSeries.slug} chapterList={props.data.contentfulComicSeries.chapters}/>
         </Layout>
     )
 }

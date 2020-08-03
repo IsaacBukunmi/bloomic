@@ -15,8 +15,111 @@
         }
 
         .chapter-gallery-container{
-            width:100%;
-            height:100%;
+            .original-image{
+                width:100%;
+                height:900px;
+
+                img{
+                    width:100%;
+                    height:100%;
+                    object-fit: contain
+                }
+            }
+
+            .thumbnail-image{
+                width:30%;
+                height:30%;
+
+                img{
+                    width:100%;
+                    height:100%;
+                    object-fit: contain;
+                }
+            }
         }
     }
 }
+
+.arrow-container-right {
+    display: block;
+    line-height: 10px;
+    position: absolute;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    transform: translate(0, -50%);
+    cursor: pointer;
+    right: 50px;
+    border:  none;
+    outline: none;
+    background-color:transparent;
+    @media(max-width:$break-point-s) {
+      transform: translate(-15%, -50%);
+    }
+
+    @media(max-width:700px) {
+      right: 30px; 
+    }
+    .font-icon {
+      font-weight: 100;
+      font-size: 50px;
+      border: 1px solid $white;
+      background-color:$black;
+      color: $white;
+      height:70px;
+      width:70px;
+      border-radius: 50%;
+      @media(max-width:700px) {
+        height:50px;
+        width:50px;
+      }
+     
+      
+      &:hover{
+        border: 1px solid $red;
+        color: $red;
+      }
+    }
+  }
+
+.arrow-container-left {
+    display: block;
+    line-height: 10px;
+    position: absolute;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    transform: translate(0, -50%);
+    cursor: pointer;
+    left: 0px; 
+    border: none;
+    outline: none;
+    background-color:transparent;
+    z-index: 2;
+    @media(max-width:$break-point-s) {
+      left: -0px; 
+    }
+    
+    .font-icon {
+      font-weight: 100;
+      font-size: 50px;
+      background-color:$black;
+      border: 1px solid $white;
+      color: $white;
+      height:70px;
+      width:70px;
+      border-radius: 50%;
+      @media(max-width:700px) {
+        height:50px;
+        width:50px;
+        left: -30px; 
+      }
+
+      &:hover{
+        border: 1px solid $red;
+        color: $red;
+      }
+    }
+  }
