@@ -1,33 +1,35 @@
 import React, { useState, useCallback } from 'react';
-import { Link } from 'gatsby';
-
-import { render } from "react-dom";
-import Gallery from "react-photo-gallery";
-import Carousel, { Modal, ModalGateway } from "react-images";
-import { photos } from "./photos";
-
-
-
+import { Link, graphql, useStaticQuery, } from 'gatsby';
+import './mansory-gallery.css'
 
 import styles from './digitalartslist.module.scss';
 import PageListHeading from '../PageListHeading/PageListHeading';
+import DigitalArtsItem from '../DigitalArtsItem/DigitalArtsItem';
 
 
 
 const DigitalArtsList = () => {
 
-    const [currentImage, setCurrentImage] = useState(0);
-    const [viewerIsOpen, setViewerIsOpen] = useState(false);
-  
-    const openLightbox = useCallback((event, { photo, index }) =>  {
-      setCurrentImage(index);
-      setViewerIsOpen(true);
-    }, []);
-  
-    const closeLightbox = () => {
-      setCurrentImage(0);
-      setViewerIsOpen(false);
-    };
+    const data = useStaticQuery(graphql`
+    query{
+        allContentfulDigitalArts{
+          edges{
+            node{
+              artsTitle
+              artsAuthor
+              artsImage{
+                file{
+                  url
+                }
+              }
+              tags
+              datePublished
+              contentful_id
+            }
+          }
+        }
+      }
+    `)
   
     return(
         <div className={styles.artListContainerFluid}>
@@ -35,21 +37,11 @@ const DigitalArtsList = () => {
                 <PageListHeading pageName="Digital Arts"/>
             </div>
             <div className={styles.listContainer}>
-            <Gallery photos={photos} onClick={openLightbox} />
-            <ModalGateway>
-                {viewerIsOpen ? (
-                <Modal onClose={closeLightbox}>
-                    <Carousel 
-                    currentIndex={currentImage}
-                    views={photos.map(x => ({
-                        ...x,
-                        srcset: x.srcSet,
-                        caption: x.title
-                    }))}
-                    />
-                </Modal>
-                ) : null}
-            </ModalGateway>
+              { 
+                  data.allContentfulDigitalArts.edges.map((edge) => (
+                      <DigitalArtsItem key={edge.node.contentful_id} artsTitle={edge.node.artsTitle} artsAuthor={edge.node.artsAuthor} imageURL={edge.node.artsImage.file.url}/>
+                  ))
+                }
             </div>
         </div>
     )

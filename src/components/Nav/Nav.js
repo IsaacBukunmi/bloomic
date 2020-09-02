@@ -4,7 +4,7 @@ import classNames from 'classnames'
 
 import navStyles from './nav.module.scss'
 
-import BloomicLogo from '../../images/bloomic_logo.png'
+import BloomicLogo from '../../images/bloomic_logo_new.png'
 
 class Nav extends React.Component {
     constructor(){
@@ -30,9 +30,9 @@ class Nav extends React.Component {
         return(
             <nav>
                 <div className={navStyles.navContainer}>
-                    <div className={navStyles.siteName}>
+                    {/* <div className={navStyles.siteName}>
                         <Link to="/">BLOOMIC</Link>   
-                    </div>
+                    </div> */}
                     <Link to="/">
                         <div className={navStyles.logoContainer}>
                             <img src={BloomicLogo} alt=""/>

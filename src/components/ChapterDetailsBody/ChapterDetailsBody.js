@@ -1,14 +1,16 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import ImageGallery from 'react-image-gallery';
+import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css"; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 
 import styles from './chapterdetailsbody.module.scss';
 import "./chapter-details-gallery.css";
-import Slider from "react-slick";
+import "./details-slick-theme.css";
 
 // class ChapterDetailsBody extends React.Component {
 //     constructor(){
@@ -136,7 +138,8 @@ const ChapterDetailsBody = (props) => {
         slidesToScroll: 1,
         focusOnSelect: false,
         nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />
+        prevArrow: <SamplePrevArrow />,
+        dotsClass:'slick-dots'
     }
         return(
 
