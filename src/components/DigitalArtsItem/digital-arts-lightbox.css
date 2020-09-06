@@ -97,6 +97,7 @@
     cursor: grab;
     background-size: 50px;
     transform-origin: center center;
+    
 }
 .lb-canvas .lb-img.lb-loading{
     opacity: 0;
@@ -155,7 +156,7 @@
     display: none !important;
 }
 .lb-canvas .lb-img{
-    max-height: 90%;
+    max-height: 95%;
     object-fit: contain;
 }
 

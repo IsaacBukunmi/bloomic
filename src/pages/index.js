@@ -5,6 +5,7 @@ import HomeSeriesSlider from "../components/HomeSeriesSlider/HomeSeriesSlider"
 import HomeStripSlide from "../components/HomeStripSlide/HomeStripSlide"
 import HomeArtsGallery from "../components/HomeArtsGallery/HomeArtsGallery";
 import NewsLetterForm from "../components/NewsletterForm/NewsletterForm";
+import HomeVideoCollections from "../components/HomeVideoCollections/HomeVideoCollections";
 
 const IndexPage = () => {
   return(
@@ -13,6 +14,7 @@ const IndexPage = () => {
         <HomeSeriesSlider />
         <HomeStripSlide />
         <HomeArtsGallery />
+        <HomeVideoCollections />
     </Layout>
   )
 }
