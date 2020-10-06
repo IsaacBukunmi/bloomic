@@ -1,0 +1,7 @@
+@import './global.scss';
+
+.comment_container{
+    @extend %container;
+    margin-top:10vh;
+
+}
