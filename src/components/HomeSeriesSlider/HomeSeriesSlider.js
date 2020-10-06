@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, graphql, useStaticQuery } from 'gatsby';
 import Slider from 'react-slick';
 import "./series-slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";

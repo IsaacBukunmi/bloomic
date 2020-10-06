@@ -66,10 +66,10 @@ class Nav extends React.Component {
                         </div>
                         <div className={navStyles.leftMenuItem}>
                             <div className={navStyles.menuLink}>
-                                <Link to="" onClick={this.handleLinkClick}>About Us</Link>
+                                <Link to="/about" onClick={this.handleLinkClick}>About Us</Link>
                             </div>
                             <div className={navStyles.menuLink}>
-                                <Link to="" onClick={this.handleLinkClick}>Contact Us</Link>
+                                <Link to="/contact" onClick={this.handleLinkClick}>Contact Us</Link>
                             </div>
                             <div className={navStyles.menuLink}>
                                 <Link to="" onClick={this.handleLinkClick}>Privacy Policy</Link>

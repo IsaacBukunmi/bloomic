@@ -33,7 +33,7 @@ const HomeVideoCollections = () => {
                     </div>
                 </div>
                 <div className={styles.contact}>
-                    <p>Would you like to speak to us, work with us or get your works featured on our platform, then contact us <Link to="/">here</Link></p>
+                    <p>Would you like to speak to us, work with us or get your works featured on our platform, then <Link to="/contact">contact us here</Link></p>
                 </div>
             </div>
         </div>

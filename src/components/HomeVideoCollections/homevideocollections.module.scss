@@ -64,11 +64,32 @@
               margin-bottom: 30px;
               margin-top:30px;
               flex: 0 0 auto;
-               
+              @media(max-width:$break-point-l){
+                width:60%;    
+              }
+              @media(max-width:$break-point-md){
+                width:80%;    
+              }
+              @media(max-width:$break-point-s){
+                width:90%;    
+              }
               &:last-of-type{
                 margin-right: 0px;
               }
             }
+        }
+
+        .contact{
+          p{
+            color:$white;
+            font-family: $font-secondary;
+            font-size:20px;
+            text-align: center;
+            a{
+              color:$red;
+
+            }
+          }
         }
     }
 }
