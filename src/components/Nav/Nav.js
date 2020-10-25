@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import classNames from 'classnames'
-
 import navStyles from './nav.module.scss'
 
 import BloomicLogo from '../../images/bloomic_logo_new.png'
