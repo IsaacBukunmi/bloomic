@@ -12,21 +12,23 @@ const ContactUsForm = () => {
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus non ipsam sapiente porro nesciunt mollitia quos animi recusandae, inventore voluptatem.</p>
                 </div>
                 <div className={styles.form_container}>
-                    <form action="">
+                    <form action="/success" method="post" name="contact" data-netlify="true" data-netlify-honeypot="bot-field">
+                        <input type="hidden" name="bot-field"/>
+                        <input type="hidden" name="form-name" value="contact"/>
                         <div className={styles.personal_info_container}>
                             <div className={styles.input_item}>
-                                <label htmlFor="">Full Name</label> <br />
-                                <input type="text" placeholder="John Doe"/>
+                                <label htmlFor="name">Full Name</label> <br />
+                                <input type="text" name="name" placeholder="John Doe"/>
                             </div>
                             <div className={styles.input_item}>
-                                <label htmlFor="">Email Address</label> <br />
-                                <input type="email" placeholder="johndoe@gmail.com"/>
+                                <label htmlFor="email">Email Address</label> <br />
+                                <input type="email"name="email" placeholder="johndoe@gmail.com"/>
                             </div>
                         </div>
                         <div className={styles.comment_container}>
                             <div className={styles.text_input}>
                                 <label>Message</label> <br />
-                                <textarea></textarea>
+                                <textarea name="message"></textarea>
                             </div>
                         </div>
                         <div  className={styles.button_container}>

@@ -21,6 +21,13 @@ module.exports = {
     'gatsby-plugin-sharp',
 
     {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+        endpoint: "https://app.us2.list-manage.com/subscribe/post?u=5b80f1bfdd61a18dd7fb4ce49&amp;id=3ea9b22be3" 
+      }
+    },
+
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'Bloomic web application',

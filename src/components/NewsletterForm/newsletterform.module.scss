@@ -65,7 +65,15 @@
             .form-container{
                 margin-top:3vh;
                 text-align:center;
+               
                 form{  
+
+                    .subscribe-message{
+                        color:$red;
+                        font-family:$font-primary;
+                        font-size: 14px;
+                        padding-bottom:20px;
+                    }
                         
                     input{
                         height:40px;
@@ -117,3 +125,4 @@
         }
     }
 }
+
