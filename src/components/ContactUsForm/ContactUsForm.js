@@ -12,7 +12,7 @@ const ContactUsForm = () => {
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus non ipsam sapiente porro nesciunt mollitia quos animi recusandae, inventore voluptatem.</p>
                 </div>
                 <div className={styles.form_container}>
-                    <form action="/success" method="post" name="contact" data-netlify="true" data-netlify-honeypot="bot-field">
+                    <form action="/success" method="POST" name="contact" data-netlify="true" data-netlify-honeypot="bot-field">
                         <input type="hidden" name="bot-field"/>
                         <input type="hidden" name="form-name" value="contact"/>
                         <div className={styles.personal_info_container}>
@@ -25,6 +25,7 @@ const ContactUsForm = () => {
                                 <input type="email"name="email" placeholder="johndoe@gmail.com"/>
                             </div>
                         </div>
+                        {/* <input type="file"/> */}
                         <div className={styles.comment_container}>
                             <div className={styles.text_input}>
                                 <label>Message</label> <br />
