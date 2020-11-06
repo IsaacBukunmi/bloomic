@@ -15,6 +15,14 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
       }
     },
+
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/images`,
+        name: 'images'
+      }
+    },
     
     'gatsby-plugin-sass',
     'gatsby-transformer-sharp',

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, graphql, useStaticQuery } from 'gatsby';
+import Img from 'gatsby-image';
 import Slider from 'react-slick';
 import "./series-slick.css";
 

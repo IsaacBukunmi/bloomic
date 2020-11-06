@@ -39,7 +39,7 @@ const  HomeArtsGallery = () => {
                         <p><Link to="/digital-arts">View All <span>Digital Arts</span></Link></p>
                     </div>
                 </div>
-                <div className={styles.imageGalleryContainer}>
+                {/* <div className={styles.imageGalleryContainer}>
                     <ul >
                         {
                             data.allContentfulDigitalArts.edges.slice(0, 5).map((edge) => (
@@ -50,6 +50,31 @@ const  HomeArtsGallery = () => {
                             ))
                         }
                     </ul>
+                </div> */}
+                <div className={styles.imageGalleryContainer}>
+                    <div className={styles.artsContainer}>
+                        <div className={styles.artsItem1}> 
+                        {
+                            data.allContentfulDigitalArts.edges.slice(0, 1).map((edge) => (
+                                    <img src={edge.node.artsImage.file.url} alt="" />
+                            ))
+                        }
+                        </div>
+                        <div className={styles.artsItem2}>
+                            {
+                                data.allContentfulDigitalArts.edges.slice(1, 2).map((edge) => (
+                                        <img src={edge.node.artsImage.file.url} alt="" />
+                                ))
+                            }
+                        </div>
+                        <div className={styles.artsItem3}>
+                            {
+                                data.allContentfulDigitalArts.edges.slice(2, 3).map((edge) => (
+                                        <img src={edge.node.artsImage.file.url} alt="" />
+                                ))
+                            }
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
