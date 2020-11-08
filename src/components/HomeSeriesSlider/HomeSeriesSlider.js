@@ -60,8 +60,9 @@ const HomeSeriesSlider = () => {
                 }
               }
               seriesImage{
-                file{
-                  url
+                
+                fixed(width:400, height:400){ 
+                  ...GatsbyContentfulFixed 
                 }
                 title
               }
@@ -148,7 +149,12 @@ const HomeSeriesSlider = () => {
                                 data.allContentfulComicSeries.edges.slice(0, 5).map((edge) => (
                                     <Link to ={`/comic-series/${edge.node.slug}`} className={homeSliderStyles.sliderItem}>
                                         <div className={homeSliderStyles.sliderImage}>
-                                            <img src={edge.node.seriesImage.file.url} alt={edge.node.seriesImage.title}/>
+                                        <Img
+                                            fixed={edge.node.seriesImage.fixed} 
+                                            key={edge.node.seriesImage.fixed.src}
+                                            alt={edge.node.seriesImage.title}>
+                                        </Img> 
+                                            {/* <img src={edge.node.seriesImage.file.url} alt={edge.node.seriesImage.title}/> */}
                                         </div> 
                                     </Link>
                                 ))
