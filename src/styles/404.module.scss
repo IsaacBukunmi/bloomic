@@ -1,0 +1,39 @@
+@import './global.scss';
+
+.error-body{
+    @extend %container;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height:100vh;
+    .error-image{
+        max-width:500px;
+        @media (max-width:600px) {
+            max-width:400px;
+        }
+        img{
+            width:100%;
+            height:100%;
+            object-fit: cover;
+        }
+    }
+    .error-text{
+        text-align:center;
+        h1{
+            font-family: $font-secondary;
+            color:$white;
+        }
+        p{
+            color:$red;
+            font-family: $font-primary;
+            font-size:17px;
+
+            a{
+                color:$red;
+                text-decoration: underline;
+                font-family: $font-primary;
+            }
+        }
+    }
+}

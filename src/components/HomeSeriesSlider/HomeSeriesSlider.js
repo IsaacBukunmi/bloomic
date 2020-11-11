@@ -149,7 +149,7 @@ const HomeSeriesSlider = () => {
                                 data.allContentfulComicSeries.edges.slice(0, 5).map((edge) => (
                                     <Link to ={`/comic-series/${edge.node.slug}`} className={homeSliderStyles.sliderItem}>
                                         <div className={homeSliderStyles.sliderImage}>
-                                        <Img
+                                        <Img className={homeSliderStyles.fixedImg}
                                             fixed={edge.node.seriesImage.fixed} 
                                             key={edge.node.seriesImage.fixed.src}
                                             alt={edge.node.seriesImage.title}>
