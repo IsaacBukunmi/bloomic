@@ -4,12 +4,14 @@ import HomeHero from "../components/HomeHero/HomeHero";
 import HomeSeriesSlider from "../components/HomeSeriesSlider/HomeSeriesSlider"
 import HomeStripSlide from "../components/HomeStripSlide/HomeStripSlide"
 import HomeArtsGallery from "../components/HomeArtsGallery/HomeArtsGallery";
-import NewsLetterForm from "../components/NewsletterForm/NewsletterForm";
 import HomeVideoCollections from "../components/HomeVideoCollections/HomeVideoCollections";
+import Head from "../components/head";
+
 
 const IndexPage = () => {
   return(
     <Layout>
+        <Head title="Home" />
         <HomeHero />
         <HomeSeriesSlider />
         <HomeStripSlide />

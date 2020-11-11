@@ -6,6 +6,11 @@
 
 module.exports = {
   /* Your site config here */
+  siteMetadata: {
+    title: 'Bloomic',
+    author: 'Bloomic Web Application'
+  },
+  
   plugins: [
     'gatsby-plugin-react-helmet',
     {

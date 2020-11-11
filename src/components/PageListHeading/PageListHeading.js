@@ -23,7 +23,7 @@ const PageListHeading = (props) => {
                 </form>
                 <FontAwesomeIcon icon={faSearch} className={styles.searchIcon} />
             </div>
-            <p style={{color:'white'}}>{searchTerm}</p>
+            {/* <p style={{color:'white'}}>{searchTerm}</p> */}
         </div>
     )
 }

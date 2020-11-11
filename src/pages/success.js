@@ -1,14 +1,11 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import ContactSuccess from '../components/ContactSuccess/ContactSuccess';
+import Head from '../components/head';
 
-const Success = props => (
+const Success = () => (
     <div>
-         {/* <Helmet>
-        <title>Success Page</title>
-        <meta name="description" content="Success Page" />
-      </Helmet> */}
-
+        <Head title="Message Sent" />
         <ContactSuccess />
     </div>
 

@@ -4,6 +4,7 @@ import Layout from '../components/Layout';
 import ChapterDetailsHero from '../components/ChapterDetailsHero/ChapterDetailsHero'
 import ChapterDetailsBody from '../components/ChapterDetailsBody/ChapterDetailsBody';
 import styles from '../styles/templates-styles.module.scss';
+import Head from '../components/head';
 
 export const data = graphql`
 query($slug:String){
@@ -35,6 +36,7 @@ const ChapterDetails = (props) => {
 
     return(
         <Layout>
+            <Head title={props.data.contentfulSeriesChapter.chapterTitle}/>
             <ChapterDetailsHero chapterNumber={props.data.contentfulSeriesChapter.chapterNumber} />
             <ChapterDetailsBody chapterImages={props.data.contentfulSeriesChapter.chapterImages} chapterTitle={props.data.contentfulSeriesChapter.chapterTitle}/>
             <div className={styles.comment_container}>

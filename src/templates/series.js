@@ -4,6 +4,7 @@ import Layout from '../components/Layout';
 import ChapterListHero from '../components/ChapterListHero/ChapterListHero';
 import ChapterListInfo from '../components/ChapterListInfo/ChapterListInfo';
 import ChapterListings from '../components/ChapterListings/ChapterListings';
+import Head from '../components/head';
 
 export const data = graphql`
     query($slug:String){
@@ -49,6 +50,7 @@ export const data = graphql`
 const Series = (props) => {
     return(
         <Layout>
+            <Head title={props.data.contentfulComicSeries.seriesTitle}/>
             <ChapterListHero 
                 seriesTitle={props.data.contentfulComicSeries.seriesTitle} 
                 seriesImage={props.data.contentfulComicSeries.heroImage.file.url}/>
@@ -60,7 +62,9 @@ const Series = (props) => {
                 seriesImageTitle={props.data.contentfulComicSeries.seriesImage.title} 
                 seriesAuthor={props.data.contentfulComicSeries.seriesAuthor} 
                 synopsis={props.data.contentfulComicSeries.synopsis.synopsis}/>
-            <ChapterListings seriesSlug={props.data.contentfulComicSeries.slug} chapterList={props.data.contentfulComicSeries.chapters}/>
+            <ChapterListings 
+                seriesSlug={props.data.contentfulComicSeries.slug} 
+                chapterList={props.data.contentfulComicSeries.chapters}/>
         </Layout>
     )
 }
