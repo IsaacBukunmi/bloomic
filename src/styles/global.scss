@@ -63,16 +63,22 @@ $darkblue:#0c0e38;
     background-position:50% 50%;
     background-size: cover;
     background-repeat: no-repeat;
-    -webkit-box-shadow: inset 119px 116px 300px 200px rgba(0,0,0,0.96);
-    -moz-box-shadow: inset 119px 116px 300px 200px rgba(0,0,0,0.96);
-    box-shadow: inset 119px 116px 300px 200px rgba(0,0,0,0.96);
+  //   -webkit-box-shadow: inset 119px 116px 300px 200px rgba(0,0,0,0.96);
+  //   -moz-box-shadow: inset 119px 116px 300px 200px rgba(0,0,0,0.96);
+  //   box-shadow: inset 119px 116px 300px 200px rgba(0,0,0,0.96);
 
-    @media(max-width:$break-point-s) {
-      -webkit-box-shadow: inset 62px 42px 233px 129px rgba(0,0,0,0.96);
-      -moz-box-shadow: inset 62px 42px 233px 129px rgba(0,0,0,0.96);
-      box-shadow: inset 62px 42px 233px 129px rgba(0,0,0,0.96);
+  //   @media(max-width:$break-point-s) {
+  //     -webkit-box-shadow: inset 62px 42px 233px 129px rgba(0,0,0,0.96);
+  //     -moz-box-shadow: inset 62px 42px 233px 129px rgba(0,0,0,0.96);
+  //     box-shadow: inset 62px 42px 233px 129px rgba(0,0,0,0.96);
      
-  }
+  // }
+
+  background-image: linear-gradient(
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.8)
+    ),
+    url("../../images/hero-bg.jpg");
 
 }
 

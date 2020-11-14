@@ -106,15 +106,15 @@
 
 .homehero-fluid{
     @extend %homehero;
-    background-image: url("../../images/hero-bg.jpg");
+    // background-image: url("../../images/hero-bg.jpg");
 }
 
-.homehero-fluid-two{
-    @extend %homehero;
-    background-image: url("../../images/hero-bg-2-2.jpg");
-}
+// .homehero-fluid-two{
+//     @extend %homehero;
+//     background-image: url("../../images/hero-bg-2-2.jpg");
+// }
 
-.homehero-fluid-three{
-    @extend %homehero;
-    background-image: url("../../images/hero-bg-3.jpg");
-}
+// .homehero-fluid-three{
+//     @extend %homehero;
+//     background-image: url("../../images/hero-bg-3.jpg");
+// }
